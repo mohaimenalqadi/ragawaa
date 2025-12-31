@@ -4,15 +4,15 @@
  */
 
 import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { HiArrowLeft, HiPhone, HiCheck, HiSparkles } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
+import { HiPhone, HiShieldCheck, HiOutlineSparkles, HiStar, HiSparkles } from 'react-icons/hi';
+import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
-import ServicesCarousel from '../components/ServicesCarousel';
 import ShapeDivider from '../components/ShapeDivider';
 import BubbleDecoration from '../components/BubbleDecoration';
+import AnimatedCounter from '../components/AnimatedCounter';
+import { useEffect, useState } from 'react';
 
 // الخدمات الرئيسية
 const services = [
@@ -84,6 +84,21 @@ const clients = [
 
 
 export default function Home() {
+    const [stats, setStats] = useState({ clients: 12304, experience: 8 });
+
+    useEffect(() => {
+        // حساب العداد الديناميكي: 12304 أساسي + 35 لكل يوم منذ تاريخ محدد
+        const startDate = new Date('2024-01-01');
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        setStats({
+            clients: 12304 + (diffDays * 35),
+            experience: 8
+        });
+    }, []);
+
     return (
         <>
             <Head>
@@ -169,20 +184,26 @@ export default function Home() {
                             </div>
 
                             {/* Stats */}
-                            <div className="flex flex-wrap gap-8 py-8 border-t border-gray-100">
+                            <div className="flex flex-wrap gap-12 py-10 border-t border-gray-100">
                                 <div>
-                                    <p className="text-3xl font-black text-[#1565C0]">+1000</p>
-                                    <p className="text-gray-500 font-medium">زبون سعيد</p>
+                                    <div className="text-4xl md:text-5xl font-black text-[#1565C0] flex items-center gap-1">
+                                        <AnimatedCounter value={stats.clients} suffix="+" />
+                                    </div>
+                                    <p className="text-gray-500 font-bold mt-2">زبون سعيد يثق بنا</p>
                                 </div>
-                                <div className="w-px h-12 bg-gray-200 hidden sm:block" />
+                                <div className="w-px h-16 bg-gray-200 hidden sm:block" />
                                 <div>
-                                    <p className="text-3xl font-black text-[#1565C0]">+5</p>
-                                    <p className="text-gray-500 font-medium">سنين خبرة</p>
+                                    <div className="text-4xl md:text-5xl font-black text-[#1565C0] flex items-center gap-1">
+                                        <AnimatedCounter value={stats.experience} suffix="+" />
+                                    </div>
+                                    <p className="text-gray-500 font-bold mt-2">سنوات من الإتقان</p>
                                 </div>
-                                <div className="w-px h-12 bg-gray-200 hidden sm:block" />
+                                <div className="w-px h-16 bg-gray-200 hidden lg:block" />
                                 <div>
-                                    <p className="text-3xl font-black text-[#1565C0]">24/7</p>
-                                    <p className="text-gray-500 font-medium">دعم فني</p>
+                                    <div className="text-4xl md:text-5xl font-black text-[#1565C0] flex items-center gap-1">
+                                        <span className="font-black">24/7</span>
+                                    </div>
+                                    <p className="text-gray-500 font-bold mt-2">دعم فني مباشر</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -313,25 +334,26 @@ export default function Home() {
                         <p className="text-gray-600 font-medium">شركاء النجاح وأبرز عملائنا في طرابلس</p>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                    <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
                         {clients.map((client, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.05, y: -5 }}
-                                className="group transition-all duration-300 text-center"
+                                whileHover={{ scale: 1.05, y: -10 }}
+                                className="group transition-all duration-500 text-center"
                             >
-                                <div className="w-32 h-32 md:w-40 md:h-40 mb-4 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex items-center justify-center p-6 group-hover:shadow-[0_20px_50px_rgba(21,101,192,0.1)] transition-all duration-500 overflow-hidden">
+                                <div className="w-40 h-40 md:w-56 md:h-56 mb-6 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 flex items-center justify-center p-8 md:p-12 group-hover:shadow-[0_40px_80px_rgba(21,101,192,0.15)] group-hover:border-blue-100 transition-all duration-500 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <img
                                         src={client.logo}
                                         alt={client.name}
-                                        className="max-w-full max-h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+                                        className="max-w-full max-h-full object-contain transform group-hover:scale-110 transition-transform duration-700 relative z-10"
                                     />
                                 </div>
-                                <span className="text-sm md:text-base font-bold text-gray-700 group-hover:text-[#1565C0] block transition-colors">
+                                <span className="text-base md:text-xl font-black text-gray-800 group-hover:text-[#1565C0] block transition-colors tracking-tight">
                                     {client.name}
                                 </span>
                             </motion.div>
