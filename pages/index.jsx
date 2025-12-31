@@ -237,9 +237,11 @@ export default function Home() {
                             {/* Main Image with Frame */}
                             <div className="relative z-10 p-4">
                                 <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
-                                    <img
+                                    <Image
                                         src="https://images.unsplash.com/photo-1742483359033-13315b247c74?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                         alt="احترافية رغوة في التنظيف"
+                                        width={688}
+                                        height={860}
                                         className="w-full h-full object-cover aspect-[4/5]"
                                     />
                                 </div>
@@ -312,9 +314,11 @@ export default function Home() {
                                 whileHover={{ scale: 1.05 }}
                                 className="aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-sm"
                             >
-                                <img
+                                <Image
                                     src={image}
                                     alt={`عمل ${index + 1}`}
+                                    width={400}
+                                    height={400}
                                     className="w-full h-full object-cover"
                                 />
                             </motion.div>
@@ -359,9 +363,11 @@ export default function Home() {
                             >
                                 <div className="w-40 h-40 md:w-56 md:h-56 mb-6 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 flex items-center justify-center p-8 md:p-12 group-hover:shadow-[0_40px_80px_rgba(21,101,192,0.15)] group-hover:border-blue-100 transition-all duration-500 overflow-hidden relative">
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <img
+                                    <Image
                                         src={client.logo}
                                         alt={client.name}
+                                        width={200}
+                                        height={200}
                                         className="max-w-full max-h-full object-contain transform group-hover:scale-110 transition-transform duration-700 relative z-10"
                                     />
                                 </div>
@@ -454,9 +460,11 @@ export default function Home() {
                         <div className="flex items-center gap-4">
                             {/* Logo in footer bar */}
                             <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/10 p-1">
-                                <img
+                                <Image
                                     src="/images/logo.png"
                                     alt="شعار رغوة"
+                                    width={40}
+                                    height={40}
                                     className="w-full h-full object-contain"
                                 />
                             </div>

@@ -3,6 +3,7 @@
  */
 
 import Head from 'next/head';
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
@@ -113,9 +114,11 @@ export default function Portfolio() {
                                     className="aspect-square rounded-xl overflow-hidden cursor-pointer 
                              shadow-sm hover:shadow-lg transition-shadow"
                                 >
-                                    <img
+                                    <Image
                                         src={item.image}
                                         alt={item.title}
+                                        width={400}
+                                        height={400}
                                         className="w-full h-full object-cover"
                                     />
                                 </motion.div>

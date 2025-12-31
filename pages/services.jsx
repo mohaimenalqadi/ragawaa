@@ -4,6 +4,7 @@
 
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { HiCheck } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -85,9 +86,11 @@ export default function Services() {
                                 {/* Image */}
                                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                                     <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
-                                        <img
+                                        <Image
                                             src={service.image}
                                             alt={service.title}
+                                            width={800}
+                                            height={600}
                                             className="w-full h-full object-cover"
                                         />
                                         {service.isNew && (

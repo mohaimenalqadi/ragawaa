@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FaWhatsapp, FaPlay } from 'react-icons/fa';
@@ -45,11 +46,16 @@ export default function HeroSection() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 1.5, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{
-                            backgroundImage: `url('${heroImages[currentImageIndex]}')`,
-                        }}
-                    />
+                        className="absolute inset-0"
+                    >
+                        <Image
+                            src={heroImages[currentImageIndex]}
+                            alt="Professional Cleaning Service Background"
+                            fill
+                            priority={true}
+                            className="object-cover"
+                        />
+                    </motion.div>
                 </AnimatePresence>
                 {/* Overlay أزرق متدرج */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1]/95 via-[#1565C0]/85 to-transparent z-10" />
