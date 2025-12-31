@@ -375,10 +375,10 @@ export default function Home() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-32 bg-[#0D47A1] relative overflow-hidden">
+            <section className="py-32 bg-[#0D47A1] slogan-banner relative overflow-hidden">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1] via-[#1565C0] to-[#0D47A1] opacity-50" />
-                <BubbleDecoration count={12} />
+                <BubbleDecoration count={15} color="bubble" />
 
                 {/* Top Divider */}
                 <ShapeDivider type="foam" position="top" color="#F8FAFC" height="120px" />
