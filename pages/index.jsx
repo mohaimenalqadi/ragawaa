@@ -4,15 +4,20 @@
  */
 
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
-import { HiPhone, HiShieldCheck, HiOutlineSparkles, HiStar, HiSparkles } from 'react-icons/hi';
 import Link from 'next/link';
+import Image from 'next/image';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { HiArrowLeft, HiPhone, HiCheck, HiSparkles } from 'react-icons/hi';
+import { FaWhatsapp } from 'react-icons/fa';
+import { HiPhone, HiShieldCheck, HiOutlineSparkles, HiStar, HiSparkles, HiCheck } from 'react-icons/hi';
+
 import HeroSection from '../components/HeroSection';
 import ShapeDivider from '../components/ShapeDivider';
 import BubbleDecoration from '../components/BubbleDecoration';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { useEffect, useState } from 'react';
+
 
 // الخدمات الرئيسية
 const services = [
