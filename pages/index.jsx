@@ -15,9 +15,9 @@ import {
     HiStar,
     HiSparkles,
     HiCheck,
-    HiArrowLeft
+    HiArrowLeft,
+    HiCalendar
 } from 'react-icons/hi';
-import { RiWhatsappFill, RiPhoneFill, RiCalendarCheckFill, RiSparkling2Fill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import ServicesCarousel from '../components/ServicesCarousel';
@@ -392,7 +392,7 @@ export default function Home() {
                     >
                         {/* Decorative background icon */}
                         <div className="absolute -bottom-10 -left-10 text-white/5 text-[15rem] rotate-12 pointer-events-none">
-                            <RiCalendarCheckFill />
+                            <HiCalendar />
                         </div>
 
                         <div className="relative z-10 text-center">
@@ -403,7 +403,7 @@ export default function Home() {
                                 transition={{ delay: 0.2 }}
                                 className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-400/20 text-blue-200 text-sm font-black mb-8 border border-blue-400/30 shadow-xl"
                             >
-                                <RiSparkling2Fill className="text-xl" />
+                                <HiSparkles className="text-xl" />
                                 <span>ابدأ رحلة التميز الآن</span>
                             </motion.div>
 
@@ -426,7 +426,7 @@ export default function Home() {
                                shadow-[0_20px_50px_rgba(34,197,94,0.3)] hover:shadow-green-500/50
                                transition-all duration-300 group"
                                 >
-                                    <RiWhatsappFill className="text-3xl group-hover:rotate-12 transition-transform" />
+                                    <FaWhatsapp className="text-3xl group-hover:rotate-12 transition-transform" />
                                     <span>احجز عبر واتساب</span>
                                 </motion.a>
 
@@ -438,7 +438,7 @@ export default function Home() {
                                bg-white/10 backdrop-blur-md text-white font-black text-2xl
                                border-2 border-white/20 shadow-xl hover:bg-white hover:text-[#0D47A1] transition-all duration-300"
                                 >
-                                    <RiPhoneFill className="text-2xl" />
+                                    <HiPhone className="text-2xl" />
                                     <span style={{ direction: 'ltr' }}>0920006270</span>
                                 </motion.a>
                             </div>

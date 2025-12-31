@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FaWhatsapp, FaPlay } from 'react-icons/fa';
-import { HiStar, HiLocationMarker } from 'react-icons/hi';
+import { HiStar, HiLocationMarker, HiHeart, HiCurrencyDollar, HiSparkles, HiPhone } from 'react-icons/hi';
 import { HiTrophy } from 'react-icons/hi2';
-import { RiUserHeartFill, RiMapPinUserFill, RiPriceTag3Fill, RiSparkling2Fill, RiPhoneFill } from 'react-icons/ri';
 import ShapeDivider from './ShapeDivider';
 import AnimatedCounter from './AnimatedCounter';
 import BubbleDecoration from './BubbleDecoration';
@@ -88,7 +87,7 @@ export default function HeroSection() {
                         <br />
                         <div className="flex items-center gap-4">
                             <span className="text-blue-400 drop-shadow-2xl">بمعايير عالمية</span>
-                            <RiSparkling2Fill className="text-yellow-400 animate-pulse hidden md:block" />
+                            <HiSparkles className="text-yellow-400 animate-pulse hidden md:block" />
                         </div>
                     </motion.h1>
 
@@ -133,7 +132,7 @@ export default function HeroSection() {
                          bg-white/10 backdrop-blur-md text-white font-black text-xl
                          border-2 border-white/20 shadow-xl hover:bg-white hover:text-[#0D47A1] transition-all duration-300"
                         >
-                            <RiPhoneFill className="text-xl" />
+                            <HiPhone className="text-xl" />
                             <span>تواصل معنا فوراً</span>
                         </motion.a>
                     </motion.div>
@@ -149,12 +148,12 @@ export default function HeroSection() {
                         <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
                             {/* Decorative Icon Background */}
                             <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
-                                <RiUserHeartFill />
+                                <HiHeart />
                             </div>
 
                             <div className="flex items-center gap-4 mb-1 relative z-10">
                                 <div className="w-12 h-12 rounded-2xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center text-blue-300 group-hover:bg-blue-400 group-hover:text-white transition-colors duration-500 shadow-lg">
-                                    <RiUserHeartFill className="text-2xl" />
+                                    <HiHeart className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={clientCount} suffix="+" />
@@ -167,12 +166,12 @@ export default function HeroSection() {
                         <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
                             {/* Decorative Icon Background */}
                             <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
-                                <RiMapPinUserFill />
+                                <HiLocationMarker />
                             </div>
 
                             <div className="flex items-center gap-4 mb-1 relative z-10">
                                 <div className="w-12 h-12 rounded-2xl bg-amber-500/20 backdrop-blur-md flex items-center justify-center text-amber-300 group-hover:bg-amber-400 group-hover:text-white transition-colors duration-500 shadow-lg">
-                                    <RiMapPinUserFill className="text-2xl" />
+                                    <HiLocationMarker className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={1} suffix="#" />
@@ -185,12 +184,12 @@ export default function HeroSection() {
                         <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
                             {/* Decorative Icon Background */}
                             <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
-                                <RiPriceTag3Fill />
+                                <HiCurrencyDollar />
                             </div>
 
                             <div className="flex items-center gap-4 mb-1 relative z-10">
                                 <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 backdrop-blur-md flex items-center justify-center text-emerald-300 group-hover:bg-emerald-400 group-hover:text-white transition-colors duration-500 shadow-lg">
-                                    <RiPriceTag3Fill className="text-2xl" />
+                                    <HiCurrencyDollar className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={65} suffix=" د.ل" />
