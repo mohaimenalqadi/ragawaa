@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiX } from 'react-icons/hi';
+import { HiX, HiPhotograph } from 'react-icons/hi';
 import ShapeDivider from '../components/ShapeDivider';
 import BubbleDecoration from '../components/BubbleDecoration';
 
@@ -66,15 +66,29 @@ export default function Portfolio() {
                 <meta name="description" content="شاهد نماذج من أعمال شركة رغوة للتنظيف والغسيل." />
             </Head>
 
-            {/* Hero */}
-            <section className="pt-32 pb-16 bg-[#1565C0] relative overflow-hidden">
-                <BubbleDecoration count={5} />
-                <div className="container-custom text-center mb-7 relative z-10">
-                    <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#FFD700] drop-shadow-md">أعمالنا</h1>
-                    <p className="text-xl text-white/80">شوف الفرق بعينك</p>
+            {/* Hero Section */}
+            <section className="pt-40 pb-20 bg-[#0D47A1] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1] via-[#1565C0] to-[#0D47A1] opacity-50" />
+                <BubbleDecoration count={12} color="bubble" />
+
+                <div className="container-custom text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-400/20 text-blue-200 text-sm font-black mb-6 border border-blue-400/30 shadow-xl"
+                    >
+                        <HiPhotograph className="text-xl" />
+                        <span>معرض التميز</span>
+                    </motion.div>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter drop-shadow-2xl">
+                        أعمالنا <span className="text-blue-300">السابقة</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed">
+                        شاهد نتائج عملنا على أرض الواقع واكتشف لماذا يثق بنا آلاف العملاء في ليبيا.
+                    </p>
                 </div>
-                {/* Wavy transition to content */}
-                <ShapeDivider type="wave" position="bottom" color="#ffffff" height="120px" />
+
+                <ShapeDivider type="foam" position="bottom" color="#ffffff" height="150px" />
             </section>
 
             {/* Filter & Gallery */}

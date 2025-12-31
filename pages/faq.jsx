@@ -120,28 +120,29 @@ export default function FAQ() {
                 <meta property="og:description" content="كل ما تحتاج تعرفه عن خدماتنا." />
             </Head>
 
-            {/* قسم الهيرو */}
-            <section className="relative pt-32 pb-16 bg-[#1565C0] overflow-hidden">
-                <BubbleDecoration count={5} />
+            {/* Hero Section */}
+            <section className="pt-40 pb-20 bg-[#0D47A1] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1] via-[#1565C0] to-[#0D47A1] opacity-50" />
+                <BubbleDecoration count={12} color="bubble" />
 
-                <div className="container-custom relative z-10 mb-7">
+                <div className="container-custom text-center relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-400/20 text-blue-200 text-sm font-black mb-6 border border-blue-400/30 shadow-xl"
                     >
-
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-[#FFD700] drop-shadow-md">
-                            عندك سؤال؟ 🤔
-                        </h1>
-                        <p className="text-xl text-white font-bold max-w-2xl mx-auto">
-                            جمعنالك أكثر الأسئلة اللي يسألونها عملاؤنا. ما لقيت جوابك؟ تواصل معنا!
-                        </p>
+                        <HiSparkles className="text-xl" />
+                        <span>إجابات وافية</span>
                     </motion.div>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter drop-shadow-2xl">
+                        الأسئلة <span className="text-blue-300">الشائعة</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed">
+                        كل ما تود معرفته عن خدمات رغوة، جمعناه لك هنا لتسهيل تجربتك معنا.
+                    </p>
                 </div>
-                {/* Wavy transition to content */}
-                <ShapeDivider type="wave" position="bottom" color="#ffffff" height="120px" />
+
+                <ShapeDivider type="foam" position="bottom" color="#ffffff" height="150px" />
             </section>
 
             {/* فئات الأسئلة */}

@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { HiCheck } from 'react-icons/hi';
+import { HiCheck, HiSparkles } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
 import ShapeDivider from '../components/ShapeDivider';
 import BubbleDecoration from '../components/BubbleDecoration';
@@ -59,15 +59,29 @@ export default function Services() {
                 <meta name="description" content="خدمات شركة رغوة: تنظيف المنازل، غسيل السجاد، غسيل السيارات، مكافحة الحشرات." />
             </Head>
 
-            {/* Hero */}
-            <section className="pt-32 pb-16 bg-[#1565C0] relative overflow-hidden">
-                <BubbleDecoration count={5} />
-                <div className="container-custom text-center relative z-10 mb-7">
-                    <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#FFD700] drop-shadow-md">خدماتنا</h1>
-                    <p className="text-xl text-white/80">تعرف على كل خدماتنا</p>
+            {/* Hero Section */}
+            <section className="pt-40 pb-20 bg-[#0D47A1] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1] via-[#1565C0] to-[#0D47A1] opacity-50" />
+                <BubbleDecoration count={12} color="bubble" />
+
+                <div className="container-custom text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-400/20 text-blue-200 text-sm font-black mb-6 border border-blue-400/30 shadow-xl"
+                    >
+                        <HiSparkles className="text-xl" />
+                        <span>معايير عالمية</span>
+                    </motion.div>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter drop-shadow-2xl">
+                        خدماتنا <span className="text-blue-300">الاحترافية</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed">
+                        نقدم لكم باقة متكاملة من خدمات التنظيف والغسيل التي تلبي كافة احتياجاتكم بأعلى مستويات الإتقان.
+                    </p>
                 </div>
-                {/* Wavy transition to content */}
-                <ShapeDivider type="wave" position="bottom" color="#ffffff" height="120px" />
+
+                <ShapeDivider type="foam" position="bottom" color="#ffffff" height="150px" />
             </section>
 
             {/* Services */}
