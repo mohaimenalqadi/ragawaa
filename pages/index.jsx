@@ -90,7 +90,7 @@ const gallery = [
 const clients = [
     { name: 'كافي افيرو', logo: '/images/avero-caffe.jpg' },
     { name: 'منتجع HT', logo: '/images/ht-group.jpg' },
-    { name: 'الهاني مول', logo: '/images/Hani-Mall.jpg' },
+    { name: 'الهاني مول', logo: '/images/hani-mall.jpg' },
     { name: 'Cinyps Station', logo: '/images/cinyps-station.jpg' },
 ];
 
