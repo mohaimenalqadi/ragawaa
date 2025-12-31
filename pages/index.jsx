@@ -76,12 +76,10 @@ const gallery = [
 
 // بيانات العملاء (حقيقية)
 const clients = [
-    { name: 'ليبيانا للهاتف المحمول', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Libyana_Logo.svg/2560px-Libyana_Logo.svg.png' },
-    { name: 'شركة المدار الجديد', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/0/0d/Al-Madar_Al-Jadeed_logo.svg/1200px-Al-Madar_Al-Jadeed_logo.svg.png' },
-    { name: 'مصرف ليبيا المركزي', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Central_Bank_of_Libya_Logo.svg/1200px-Central_Bank_of_Libya_Logo.svg.png' },
-    { name: 'شركة البريقة لتسويق النفط', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/6/6f/Brega_Petroleum_Marketing_Company_Logo.png/220px-Brega_Petroleum_Marketing_Company_Logo.png' },
-    { name: 'جامعة طرابلس', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/8/8e/Tripoli_University_logo.png/220px-Tripoli_University_logo.png' },
-    { name: 'الشركة العامة للكهرباء', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/1/19/GECOL_logho.png/220px-GECOL_logho.png' },
+    { name: 'كافي افيرو', logo: '/images/avero-caffe.jpg' },
+    { name: 'منتجع HT', logo: '/images/ht-group.jpg' },
+    { name: 'الهاني مول', logo: '/images/Hani-Mall.jpg' },
+    { name: 'Cinyps Station', logo: '/images/cinyps-station.jpg' },
 ];
 
 
@@ -323,8 +321,8 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.1, filter: 'grayscale(0%)' }}
-                                className="group grayscale opacity-50 hover:opacity-100 transition-all duration-300 text-center"
+                                whileHover={{ scale: 1.1 }}
+                                className="group transition-all duration-300 text-center"
                             >
                                 <div className="w-24 h-24 mb-3 bg-white rounded-2xl shadow-sm flex items-center justify-center p-3 group-hover:shadow-md transition-shadow">
                                     <img
