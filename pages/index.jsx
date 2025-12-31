@@ -74,14 +74,14 @@ const gallery = [
     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
 ];
 
-// بيانات العملاء (افتراضية)
+// بيانات العملاء (حقيقية)
 const clients = [
-    { name: 'ليبيانا للهاتف المحمول', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
-    { name: 'شركة المدار الجديد', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
-    { name: 'مصرف ليبيا المركزي', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
-    { name: 'فندق المهاري', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
-    { name: 'شركة البريقة', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
-    { name: 'جامعة طرابلس', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'ليبيانا للهاتف المحمول', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Libyana_Logo.svg/2560px-Libyana_Logo.svg.png' },
+    { name: 'شركة المدار الجديد', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/0/0d/Al-Madar_Al-Jadeed_logo.svg/1200px-Al-Madar_Al-Jadeed_logo.svg.png' },
+    { name: 'مصرف ليبيا المركزي', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Central_Bank_of_Libya_Logo.svg/1200px-Central_Bank_of_Libya_Logo.svg.png' },
+    { name: 'شركة البريقة لتسويق النفط', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/6/6f/Brega_Petroleum_Marketing_Company_Logo.png/220px-Brega_Petroleum_Marketing_Company_Logo.png' },
+    { name: 'جامعة طرابلس', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/8/8e/Tripoli_University_logo.png/220px-Tripoli_University_logo.png' },
+    { name: 'الشركة العامة للكهرباء', logo: 'https://upload.wikimedia.org/wikipedia/ar/thumb/1/19/GECOL_logho.png/220px-GECOL_logho.png' },
 ];
 
 
@@ -296,10 +296,12 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
+                {/* Wave transition to next section */}
+                <ShapeDivider type="wave" position="bottom" color="#F8FAFC" height="150px" />
             </section>
 
             {/* ======= قسم عملاؤنا ======= */}
-            <section className="py-24 bg-gray-50 relative overflow-hidden">
+            <section className="py-24 bg-slate-50 relative overflow-hidden">
                 <div className="container-custom relative z-10">
                     <div className="text-center mb-16">
                         <motion.h2
@@ -308,7 +310,7 @@ export default function Home() {
                             viewport={{ once: true }}
                             className="text-3xl md:text-4xl font-black text-gray-900 mb-4"
                         >
-                            نعتز بثقتهم 🤝
+                            نعتز بثقتهم
                         </motion.h2>
                         <p className="text-gray-600 font-medium">شركاء النجاح وأبرز عملائنا في طرابلس</p>
                     </div>
@@ -324,8 +326,12 @@ export default function Home() {
                                 whileHover={{ scale: 1.1, filter: 'grayscale(0%)' }}
                                 className="group grayscale opacity-50 hover:opacity-100 transition-all duration-300 text-center"
                             >
-                                <div className="w-20 h-20 mb-3 bg-white rounded-2xl shadow-sm flex items-center justify-center p-4 group-hover:shadow-md transition-shadow">
-                                    <HiSparkles className="text-2xl text-[#1565C0]" />
+                                <div className="w-24 h-24 mb-3 bg-white rounded-2xl shadow-sm flex items-center justify-center p-3 group-hover:shadow-md transition-shadow">
+                                    <img
+                                        src={client.logo}
+                                        alt={client.name}
+                                        className="max-w-full max-h-full object-contain"
+                                    />
                                 </div>
                                 <span className="text-xs font-bold text-gray-600 group-hover:text-[#1565C0] block transition-colors">
                                     {client.name}
@@ -334,14 +340,13 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
-                <ShapeDivider type="wave" position="bottom" color="#0D47A1" height="100px" />
             </section>
 
             {/* CTA Section */}
             <section className="py-24 bg-[#0D47A1] relative overflow-hidden">
                 <BubbleDecoration count={10} />
-                {/* Foam effect at the top of CTA */}
-                <ShapeDivider type="foam" position="top" color="#ffffff" height="100px" />
+                {/* Foam effect at the top of CTA - Matching the slate-50 background of the section above */}
+                <ShapeDivider type="foam" position="top" color="#F8FAFC" height="100px" />
 
                 <div className="container-custom relative z-10 text-center">
                     <motion.div
@@ -350,7 +355,7 @@ export default function Home() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
-                            جاهز تحجز؟ 🧹
+                            جاهز تحجز؟
                         </h2>
                         <p className="text-xl text-white/80 mb-10 max-w-xl mx-auto">
                             تواصل معنا الآن واحصل على مكان نظيف ومتألق
