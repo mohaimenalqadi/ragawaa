@@ -313,7 +313,7 @@ export default function Home() {
                         <p className="text-gray-600 font-medium">شركاء النجاح وأبرز عملائنا في طرابلس</p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
                         {clients.map((client, index) => (
                             <motion.div
                                 key={index}
@@ -321,17 +321,17 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.1 }}
+                                whileHover={{ scale: 1.05, y: -5 }}
                                 className="group transition-all duration-300 text-center"
                             >
-                                <div className="w-24 h-24 mb-3 bg-white rounded-2xl shadow-sm flex items-center justify-center p-3 group-hover:shadow-md transition-shadow">
+                                <div className="w-32 h-32 md:w-40 md:h-40 mb-4 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex items-center justify-center p-6 group-hover:shadow-[0_20px_50px_rgba(21,101,192,0.1)] transition-all duration-500 overflow-hidden">
                                     <img
                                         src={client.logo}
                                         alt={client.name}
-                                        className="max-w-full max-h-full object-contain"
+                                        className="max-w-full max-h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                 </div>
-                                <span className="text-xs font-bold text-gray-600 group-hover:text-[#1565C0] block transition-colors">
+                                <span className="text-sm md:text-base font-bold text-gray-700 group-hover:text-[#1565C0] block transition-colors">
                                     {client.name}
                                 </span>
                             </motion.div>

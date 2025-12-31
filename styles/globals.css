@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
 /* ===========================================
    شركة رغوة - تصميم نظيف وبسيط
    الألوان: أزرق + أبيض (من الشعار)
@@ -6,9 +8,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
 /* ===========================================
    CSS Variables - Brand Colors
