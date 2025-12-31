@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FaWhatsapp, FaPlay } from 'react-icons/fa';
-import { HiPhone, HiStar, HiLocationMarker, HiSparkles, HiHeart } from 'react-icons/hi';
-import { HiTrophy, HiBadgeCheck } from 'react-icons/hi2';
+import { HiStar, HiLocationMarker } from 'react-icons/hi';
+import { HiTrophy } from 'react-icons/hi2';
+import { RiUserHeartFill, RiMapPinUserFill, RiPriceTag3Fill, RiSparkling2Fill, RiPhoneFill } from 'react-icons/ri';
 import ShapeDivider from './ShapeDivider';
 import AnimatedCounter from './AnimatedCounter';
 import BubbleDecoration from './BubbleDecoration';
@@ -68,10 +69,10 @@ export default function HeroSection() {
                         transition={{ delay: 0.2 }}
                         className="mb-8"
                     >
-                        <span className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full 
-                           bg-white/10 backdrop-blur-md text-white text-xs md:text-sm font-bold border border-white/20 shadow-2xl">
-                            <HiLocationMarker className="text-blue-400 animate-bounce" />
-                            الإتقان في قلب طرابلس • ليبيا 🇱🇾
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full 
+                           bg-white/20 backdrop-blur-sm text-white text-sm font-medium">
+                            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                            متوفرين الآن • طرابلس، ليبيا
                         </span>
                     </motion.div>
 
@@ -80,14 +81,14 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-black text-white 
-                       leading-[1.1] mb-8 tracking-tighter"
+                        className="text-5xl md:text-6xl lg:text-7xl font-black text-white 
+                       leading-tight mb-8"
                     >
-                        فخامة النظافة
+                        نظافة تبهرك
                         <br />
                         <div className="flex items-center gap-4">
                             <span className="text-blue-400 drop-shadow-2xl">بمعايير عالمية</span>
-                            <HiSparkles className="text-yellow-400 animate-pulse hidden md:block" />
+                            <RiSparkling2Fill className="text-yellow-400 animate-pulse hidden md:block" />
                         </div>
                     </motion.h1>
 
@@ -98,7 +99,7 @@ export default function HeroSection() {
                         transition={{ delay: 0.4 }}
                         className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl leading-relaxed font-medium"
                     >
-                        عناية فائقة وتجربة تنظيف استثنائية لمنازلك، مفروشاتك، وسياراتك بأحدث ما توصلت إليه التكنولوجيا.
+                        تنظيف منازل • غسيل سجاد • غسيل سيارات • مكافحة آفات
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -120,7 +121,7 @@ export default function HeroSection() {
                          transition-all duration-300 group"
                         >
                             <FaWhatsapp className="text-2xl group-hover:rotate-12 transition-transform" />
-                            <span>ابدأ رحلة الإتقان</span>
+                            <span>احجز عبر واتساب</span>
                         </motion.a>
 
                         {/* Phone */}
@@ -132,7 +133,7 @@ export default function HeroSection() {
                          bg-white/10 backdrop-blur-md text-white font-black text-xl
                          border-2 border-white/20 shadow-xl hover:bg-white hover:text-[#0D47A1] transition-all duration-300"
                         >
-                            <HiPhone className="text-xl" />
+                            <RiPhoneFill className="text-xl" />
                             <span>تواصل معنا فوراً</span>
                         </motion.a>
                     </motion.div>
@@ -145,51 +146,57 @@ export default function HeroSection() {
                         className="mt-20 flex flex-wrap items-stretch gap-6"
                     >
                         {/* Stat Card 1 */}
-                        <div className="group bg-white/10 backdrop-blur-xl p-6 rounded-[2rem] border border-white/20 flex flex-col gap-2 min-w-[220px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 transform translate-x-2 translate-y-[-10px] scale-[2.5] group-hover:scale-[3] transition-transform duration-700 text-blue-400">
-                                <HiHeart />
+                        <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
+                            {/* Decorative Icon Background */}
+                            <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
+                                <RiUserHeartFill />
                             </div>
-                            <div className="flex items-center gap-3 mb-1">
-                                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-400 group-hover:text-white transition-colors duration-500">
-                                    <HiStar className="text-xl" />
+
+                            <div className="flex items-center gap-4 mb-1 relative z-10">
+                                <div className="w-12 h-12 rounded-2xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center text-blue-300 group-hover:bg-blue-400 group-hover:text-white transition-colors duration-500 shadow-lg">
+                                    <RiUserHeartFill className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={clientCount} suffix="+" />
                                 </span>
                             </div>
-                            <span className="text-white/80 font-bold text-lg">ثقة متجددة من عملائنا</span>
+                            <span className="text-white/80 font-bold text-lg relative z-10">ثقة متجددة من عملائنا</span>
                         </div>
 
                         {/* Stat Card 2 */}
-                        <div className="group bg-white/10 backdrop-blur-xl p-6 rounded-[2rem] border border-white/20 flex flex-col gap-2 min-w-[220px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 transform translate-x-2 translate-y-[-10px] scale-[2.5] group-hover:scale-[3] transition-transform duration-700 text-yellow-400">
-                                <HiTrophy />
+                        <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
+                            {/* Decorative Icon Background */}
+                            <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
+                                <RiMapPinUserFill />
                             </div>
-                            <div className="flex items-center gap-3 mb-1">
-                                <div className="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-400 group-hover:bg-yellow-400 group-hover:text-white transition-colors duration-500">
-                                    <HiTrophy className="text-xl" />
+
+                            <div className="flex items-center gap-4 mb-1 relative z-10">
+                                <div className="w-12 h-12 rounded-2xl bg-amber-500/20 backdrop-blur-md flex items-center justify-center text-amber-300 group-hover:bg-amber-400 group-hover:text-white transition-colors duration-500 shadow-lg">
+                                    <RiMapPinUserFill className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={1} suffix="#" />
                                 </span>
                             </div>
-                            <span className="text-white/80 font-bold text-lg">الوجهة الأولى في ليبيا</span>
+                            <span className="text-white/80 font-bold text-lg relative z-10">الوجهة الأولى في ليبيا</span>
                         </div>
 
                         {/* Stat Card 3 */}
-                        <div className="group bg-white/10 backdrop-blur-xl p-6 rounded-[2rem] border border-white/20 flex flex-col gap-2 min-w-[220px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 transform translate-x-2 translate-y-[-10px] scale-[2.5] group-hover:scale-[3] transition-transform duration-700 text-green-400">
-                                <HiBadgeCheck />
+                        <div className="group bg-white/10 backdrop-blur-xl p-7 rounded-[2.5rem] border border-white/20 flex flex-col gap-3 min-w-[240px] hover:bg-white/20 transition-all duration-500 shadow-2xl overflow-hidden relative">
+                            {/* Decorative Icon Background */}
+                            <div className="absolute -top-4 -right-4 p-4 opacity-5 bg-white/20 rounded-full scale-[3] group-hover:scale-[3.5] group-hover:rotate-12 transition-transform duration-700">
+                                <RiPriceTag3Fill />
                             </div>
-                            <div className="flex items-center gap-3 mb-1">
-                                <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-400 group-hover:text-white transition-colors duration-500">
-                                    <HiBadgeCheck className="text-xl" />
+
+                            <div className="flex items-center gap-4 mb-1 relative z-10">
+                                <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 backdrop-blur-md flex items-center justify-center text-emerald-300 group-hover:bg-emerald-400 group-hover:text-white transition-colors duration-500 shadow-lg">
+                                    <RiPriceTag3Fill className="text-2xl" />
                                 </div>
                                 <span className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
                                     <AnimatedCounter value={65} suffix=" د.ل" />
                                 </span>
                             </div>
-                            <span className="text-white/80 font-bold text-lg">استثمار في راحتكم</span>
+                            <span className="text-white/80 font-bold text-lg relative z-10">استثمار في راحتكم</span>
                         </div>
                     </motion.div>
                 </div>
