@@ -16,11 +16,20 @@ const heroImages = [
 
 export default function HeroSection() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [clientCount, setClientCount] = useState(12304);
 
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
         }, 5000);
+
+        // حساب العداد الديناميكي: 12304 أساسي + 35 لكل يوم منذ الآن
+        const startDate = new Date('2025-12-31');
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        setClientCount(12304 + (diffDays * 35));
+
         return () => clearInterval(timer);
     }, []);
 
@@ -135,7 +144,7 @@ export default function HeroSection() {
                             <div className="flex items-center gap-2 mb-1">
                                 <span className="text-2xl">⭐</span>
                                 <span className="text-3xl font-black">
-                                    <AnimatedCounter value={1000} suffix="+" />
+                                    <AnimatedCounter value={clientCount} suffix="+" />
                                 </span>
                             </div>
                             <span className="text-white/70 font-bold mr-9">عميل سعيد</span>
