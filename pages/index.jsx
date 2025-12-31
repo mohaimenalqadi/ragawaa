@@ -74,6 +74,16 @@ const gallery = [
     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
 ];
 
+// بيانات العملاء (افتراضية)
+const clients = [
+    { name: 'ليبيانا للهاتف المحمول', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'شركة المدار الجديد', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'مصرف ليبيا المركزي', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'فندق المهاري', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'شركة البريقة', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+    { name: 'جامعة طرابلس', logo: 'https://images.unsplash.com/photo-1614850523296-62c0af68962c?w=200&q=80' },
+];
+
 
 export default function Home() {
     return (
@@ -286,8 +296,45 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
-                {/* Peak transition to CTA */}
+            </section>
 
+            {/* ======= قسم عملاؤنا ======= */}
+            <section className="py-24 bg-gray-50 relative overflow-hidden">
+                <div className="container-custom relative z-10">
+                    <div className="text-center mb-16">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-3xl md:text-4xl font-black text-gray-900 mb-4"
+                        >
+                            نعتز بثقتهم 🤝
+                        </motion.h2>
+                        <p className="text-gray-600 font-medium">شركاء النجاح وأبرز عملائنا في طرابلس</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                        {clients.map((client, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ scale: 1.1, filter: 'grayscale(0%)' }}
+                                className="group grayscale opacity-50 hover:opacity-100 transition-all duration-300 text-center"
+                            >
+                                <div className="w-20 h-20 mb-3 bg-white rounded-2xl shadow-sm flex items-center justify-center p-4 group-hover:shadow-md transition-shadow">
+                                    <HiSparkles className="text-2xl text-[#1565C0]" />
+                                </div>
+                                <span className="text-xs font-bold text-gray-600 group-hover:text-[#1565C0] block transition-colors">
+                                    {client.name}
+                                </span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+                <ShapeDivider type="wave" position="bottom" color="#0D47A1" height="100px" />
             </section>
 
             {/* CTA Section */}
