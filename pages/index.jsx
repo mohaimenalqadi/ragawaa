@@ -98,11 +98,11 @@ export default function Home() {
     const [stats, setStats] = useState({ clients: 12304, experience: 8 });
 
     useEffect(() => {
-        // حساب العداد الديناميكي: 12304 أساسي + 35 لكل يوم منذ تاريخ محدد
-        const startDate = new Date('2024-01-01');
+        // حساب العداد الديناميكي: 12304 أساسي + 35 لكل يوم منذ الآن
+        const startDate = new Date('2025-12-31');
         const today = new Date();
         const diffTime = Math.abs(today - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
         setStats({
             clients: 12304 + (diffDays * 35),
@@ -200,7 +200,7 @@ export default function Home() {
                                     <div className="text-4xl md:text-5xl font-black text-[#1565C0] flex items-center gap-1">
                                         <AnimatedCounter value={stats.clients} suffix="+" />
                                     </div>
-                                    <p className="text-gray-500 font-bold mt-2">زبون سعيد يثق بنا</p>
+                                    <p className="text-gray-500 font-bold mt-2">عميل سعيد يثق بنا</p>
                                 </div>
                                 <div className="w-px h-16 bg-gray-200 hidden sm:block" />
                                 <div>
