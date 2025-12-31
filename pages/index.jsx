@@ -17,6 +17,7 @@ import {
     HiCheck,
     HiArrowLeft
 } from 'react-icons/hi';
+import { RiWhatsappFill, RiPhoneFill, RiCalendarCheckFill, RiSparkling2Fill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import ServicesCarousel from '../components/ServicesCarousel';
@@ -374,50 +375,73 @@ export default function Home() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-[#0D47A1] relative overflow-hidden">
-                <BubbleDecoration count={10} />
-                {/* Foam effect at the top of CTA - Matching the slate-50 background of the section above */}
-                <ShapeDivider type="foam" position="top" color="#F8FAFC" height="100px" />
+            <section className="py-32 bg-[#0D47A1] relative overflow-hidden">
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1] via-[#1565C0] to-[#0D47A1] opacity-50" />
+                <BubbleDecoration count={12} />
 
-                <div className="container-custom relative z-10 text-center">
+                {/* Top Divider */}
+                <ShapeDivider type="foam" position="top" color="#F8FAFC" height="120px" />
+
+                <div className="container-custom relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
+                        className="max-w-4xl mx-auto bg-white/10 backdrop-blur-2xl p-10 md:p-16 rounded-[3rem] border border-white/20 shadow-2xl relative overflow-hidden"
                     >
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
-                            جاهز تحجز؟
-                        </h2>
-                        <p className="text-xl text-white/80 mb-10 max-w-xl mx-auto">
-                            تواصل معنا الآن واحصل على مكان نظيف ومتألق
-                        </p>
+                        {/* Decorative background icon */}
+                        <div className="absolute -bottom-10 -left-10 text-white/5 text-[15rem] rotate-12 pointer-events-none">
+                            <RiCalendarCheckFill />
+                        </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <motion.a
-                                href="https://wa.me/218920006270"
-                                target="_blank"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="flex items-center justify-center gap-3 px-10 py-5 rounded-full 
-                           bg-green-500 text-white font-bold text-lg
-                           shadow-lg shadow-green-500/30 hover:shadow-green-500/50
-                           transition-all duration-300"
+                        <div className="relative z-10 text-center">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-400/20 text-blue-200 text-sm font-black mb-8 border border-blue-400/30 shadow-xl"
                             >
-                                <FaWhatsapp className="text-2xl" />
-                                <span>واتساب</span>
-                            </motion.a>
+                                <RiSparkling2Fill className="text-xl" />
+                                <span>ابدأ رحلة التميز الآن</span>
+                            </motion.div>
 
-                            <motion.a
-                                href="tel:+218920006270"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="flex items-center justify-center gap-3 px-10 py-5 rounded-full 
-                           bg-white text-[#1565C0] font-bold text-lg
-                           shadow-lg hover:shadow-xl transition-all duration-300"
-                            >
-                                <HiPhone className="text-xl" />
-                                <span style={{ direction: 'ltr' }}>0920006270</span>
-                            </motion.a>
+                            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-tight">
+                                جاهز لتجربة <br className="md:hidden" />
+                                <span className="text-blue-300">نظافة لا تبارى؟</span>
+                            </h2>
+                            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                                انضم إلى آلاف العملاء الراضين في طرابلس واستمتع بخدمة تنظيف احترافية تليق بمقامك.
+                            </p>
+
+                            <div className="flex flex-wrap gap-6 justify-center mt-12">
+                                <motion.a
+                                    href="https://wa.me/218920006270"
+                                    target="_blank"
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="flex items-center justify-center gap-3 px-12 py-5 rounded-full 
+                               bg-green-500 text-white font-black text-2xl
+                               shadow-[0_20px_50px_rgba(34,197,94,0.3)] hover:shadow-green-500/50
+                               transition-all duration-300 group"
+                                >
+                                    <RiWhatsappFill className="text-3xl group-hover:rotate-12 transition-transform" />
+                                    <span>احجز عبر واتساب</span>
+                                </motion.a>
+
+                                <motion.a
+                                    href="tel:+218920006270"
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="flex items-center justify-center gap-3 px-12 py-5 rounded-full 
+                               bg-white/10 backdrop-blur-md text-white font-black text-2xl
+                               border-2 border-white/20 shadow-xl hover:bg-white hover:text-[#0D47A1] transition-all duration-300"
+                                >
+                                    <RiPhoneFill className="text-2xl" />
+                                    <span style={{ direction: 'ltr' }}>0920006270</span>
+                                </motion.a>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
