@@ -6,6 +6,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import {
@@ -19,6 +20,7 @@ import {
 } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
+import ServicesCarousel from '../components/ServicesCarousel';
 import ShapeDivider from '../components/ShapeDivider';
 import BubbleDecoration from '../components/BubbleDecoration';
 import AnimatedCounter from '../components/AnimatedCounter';
